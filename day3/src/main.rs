@@ -56,7 +56,27 @@ fn part1() {
     println!("{}", haha);
 }
 
+fn calculate_score(input: char) -> usize {
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        .chars()
+        .position(|x| x == input)
+        .expect("Calculate Score received non alphabet!")
+}
+
+fn find_badge(input: Vec<String>) {}
+
+fn part2() {
+    let i: i32 = 1;
+    let input = fs::read_to_string("./input.txt")
+        .unwrap()
+        .lines()
+        .enumerate()
+        .fold(Vec::new(), |acc: Vec<&str>, (index, input)| acc);
+}
+
 fn main() {
     println!("Part 1:");
     part1();
+    println!("Part 2 : ");
+    part2();
 }
