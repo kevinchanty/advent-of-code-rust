@@ -22,7 +22,22 @@ fn part_one() {
     println!("{answer}");
 }
 
+fn part_two() {
+    let answer = INPUT
+        .lines()
+        .map(|line| parse_input(line))
+        .filter(|(first_low, first_high, second_low, second_high)| {
+            (first_low <= second_high && first_low >= second_low)
+                || (second_low <= first_high && second_low >= first_low)
+        })
+        .count();
+
+    println!("{answer}");
+}
+
 fn main() {
     println!("Part 1:");
     part_one();
+    println!("Part 2:");
+    part_two();
 }
